@@ -6,4 +6,8 @@ import kodlamaio.hrms.entities.concretes.JobTitle;
 
 public interface JobTitleDao extends JpaRepository<JobTitle, Integer> {
 
+	
+
+	
+
 }

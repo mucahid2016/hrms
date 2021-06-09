@@ -6,8 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kodlamaio.hrms.business.abstracts.JobTitleService;
+import kodlamaio.hrms.core.utilities.results.DataResult;
+import kodlamaio.hrms.core.utilities.results.Result;
+import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import kodlamaio.hrms.dataAccess.abstracts.JobTitleDao;
 import kodlamaio.hrms.entities.concretes.JobTitle;
+import kodlamaio.hrms.entities.concretes.User;
 
 @Service
 public class JobTitleManager implements JobTitleService {
@@ -20,16 +24,20 @@ public class JobTitleManager implements JobTitleService {
 		this.jobTitleDao = jobTitleDao;
 	}
 
-	@Override
-	public void save(JobTitle jobTitle) {
-		this.jobTitleDao.save(jobTitle);
-		
-	}
 
 	@Override
-	public List<JobTitle> getAll() {
-
-		return this.jobTitleDao.findAll();
+	public List<JobTitle> getAll(){
+		return jobTitleDao.findAll();
 	}
+	
+
+	
+
+	
+
+
+
+
+
 
 }

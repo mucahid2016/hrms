@@ -13,21 +13,23 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="job_titles")
+@Table(name="activation_codes")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobTitle {
+public class ActivationCode {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="name")
-	private String name;
+	@Column(name="user_id")
+	private int userId;
 	
+	@Column(name="activation_code")
+	private String activationCode;
 	
-	
-	
+	@Column(name="is_activated")
+	private Boolean isActivated;
 
 }
