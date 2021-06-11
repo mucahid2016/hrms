@@ -41,7 +41,7 @@ public class EmployerManager implements EmployerService {
 
 	@Override
 	public Result delete(Employer employer) {
-		this.employerDao.save(employer);
+		this.employerDao.delete(employer);
 		return new SuccessResult("İşveren Sistemden silindi!");
 	}
 
