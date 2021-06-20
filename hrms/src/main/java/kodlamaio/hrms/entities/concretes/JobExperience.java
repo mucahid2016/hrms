@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,19 +34,20 @@ public class JobExperience {
 	private int id;
 	
 	@ManyToOne(targetEntity = Resume.class)
-	@JoinColumn(name = "resume _id")
-	private int resume;
+	@JoinColumn(name = "resume_id")
+	@JsonProperty(access = Access.WRITE_ONLY)
+	private Resume resume;
 	
 	@NotBlank(message = "Boş geçilemez")
 	@Column(name = "company_name")
 	private String companyName;
 	
 	
-	@ManyToOne(targetEntity = Graduate.class, fetch = FetchType.LAZY, optional = false)
+	@ManyToOne(targetEntity = JobTitle.class)
 	@JoinColumn(name = "job_title_id", referencedColumnName = "id", nullable = false)
 	private JobTitle jobTitle;
 	
-	@NotBlank(message = "Boş geçilemez")
+
 	@Column(name = "started_name")
 	private Date startedDate;
 	

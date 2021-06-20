@@ -32,7 +32,7 @@ public class Technology {
 	private int id;
 	
 	@ManyToOne(targetEntity = Resume.class , fetch = FetchType.LAZY)
-	@JoinColumn(name = "resume _id")
+	@JoinColumn(name = "resume_id")
 	private Resume resume;
 	
 	@NotBlank(message = "Boş geçilmez")

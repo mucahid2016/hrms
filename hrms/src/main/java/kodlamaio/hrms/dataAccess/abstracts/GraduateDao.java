@@ -7,6 +7,6 @@ import kodlamaio.hrms.entities.concretes.Graduate;
 
 public interface GraduateDao extends JpaRepository<Graduate, Integer> {
 
-	boolean existByDescription(String description);
+	boolean existsByDescription(String description);
 	
 }

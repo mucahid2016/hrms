@@ -4,11 +4,11 @@ import java.util.List;
 
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
-import kodlamaio.hrms.dataAccess.abstracts.JobTitleDao;
-import kodlamaio.hrms.entities.concretes.JobTitle;
+import kodlamaio.hrms.entities.concretes.Language;
 
-public interface JobTitleService {
+public interface LanguagaService {
+
+	Result add(Language language);
 	
-	List<JobTitle> getAll();
-
+	DataResult<List<Language>> getAll();
 }

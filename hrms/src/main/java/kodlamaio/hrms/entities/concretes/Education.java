@@ -33,15 +33,20 @@ public class Education {
 	
 	@JsonIgnore
 	@ManyToOne(targetEntity = Resume.class)
-	@JoinColumn(name = "resume _id")
+	@JoinColumn(name = "resume_id")
 	private Resume resume;
+	
+	@JsonIgnore
+	@ManyToOne(targetEntity = Resume.class)
+	@JoinColumn(name = "job_seeker_id")
+	private JobSeeker jobSeeker;
 	
 	@Column(name = "school_name")
 	@NotBlank(message = "Boş geçilemez")
 	private String schoolName;
 	
 	
-	@ManyToOne(targetEntity = Graduate.class, fetch = FetchType.LAZY)
+	@ManyToOne(targetEntity = Graduate.class)
 	@JoinColumn(name = "graduate_id", referencedColumnName = "id", nullable = false)
 	private Graduate graduate;
 	

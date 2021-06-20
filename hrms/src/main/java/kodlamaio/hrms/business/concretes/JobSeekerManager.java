@@ -36,7 +36,7 @@ public class JobSeekerManager implements JobSeekerService {
 	@Override
 	public Result update(JobSeeker jobSeeker) {
 		this.jobSeekerDao.save(jobSeeker);
-		return new SuccessResult("İş adayı başarılı bir şekilde güncellendi.");
+		return new SuccessResult("İş adayı başarılı bir şekilde güncellendi.s");
 	}
 
 	@Override

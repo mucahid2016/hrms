@@ -31,7 +31,7 @@ public class Language {
 	private int id;
 	
 	@ManyToOne(targetEntity = Resume.class)
-	@JoinColumn(name = "resume _id")
+	@JoinColumn(name = "resume_id")
 	private Resume resume;
 	
 	@NotBlank(message = "Boş geçilmez")
