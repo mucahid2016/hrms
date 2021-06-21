@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "users_activation")
+@Table(name = "activation_codes")
 @AllArgsConstructor
 @NoArgsConstructor
 public class ActivationCode {
@@ -34,7 +34,7 @@ public class ActivationCode {
 	@ManyToOne(targetEntity = User.class, fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
 	@JsonIgnore
-	private User userId;
+	private User user;
 
 	@JsonIgnore
 	@Column(name = "activation_code")
@@ -44,7 +44,7 @@ public class ActivationCode {
 	@Column(name = "is_activated")
 	private Boolean isActivated;
 
-	@JsonIgnore
-	@Column(name = "created_date")
-	private Date createdDate;
+	//@JsonIgnore
+	//@Column(name = "created_date")
+	//private Date createdDate;
 }

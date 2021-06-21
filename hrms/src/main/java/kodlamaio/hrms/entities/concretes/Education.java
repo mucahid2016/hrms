@@ -1,10 +1,10 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -54,15 +54,15 @@ public class Education {
 	@NotBlank(message = "Boş geçilemez")
 	private String schoolDepartment;
 	
-	@Column(name = "start_date")
+	@Column(name = "started_date")
 	@NotBlank(message = "Boş geçilemez")
-	private Date startedDate;
+	private LocalDate startedDate;
 	
 	@Column(name = "ended_date") 
-	private Date endedDate;
+	private LocalDate endedDate;
 	
-	@Column(name = "crated_date")
-	private Date createdDate;
+	@Column(name = "created_date")
+	private LocalDate createdDate;
 	
 	
 }

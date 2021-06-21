@@ -27,7 +27,7 @@ public class ConfirmEmployersController {
 	}
 	
 	@PostMapping("/getall")
-	public Result z(@RequestBody ConfirmEmployer confirmEmployer) {
+	public Result add(@RequestBody ConfirmEmployer confirmEmployer) {
 		return this.confirmEmployerService.add(confirmEmployer);
 	}
 	

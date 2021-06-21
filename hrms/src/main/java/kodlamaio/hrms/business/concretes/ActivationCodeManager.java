@@ -43,11 +43,11 @@ public class ActivationCodeManager implements ActivationCodeService {
 		}
 		LocalDate a =(LocalDate.now());
 		newActivationCode.setIsActivated(true);
-		newActivationCode.setCreatedDate(Date.valueOf(a));
+		
 		activationCodeDao.save(newActivationCode);
 		
 		User activationUser = new User();
-		activationUser = userDao.getOne(newActivationCode.getUserId().getId());
+		activationUser = userDao.getOne(newActivationCode.getUser().getId());
 		activationUser.setActivation(true);
 		userDao.save(activationUser);
 		return new SuccessResult("Doğrulama Başarılı");	
@@ -66,8 +66,8 @@ public class ActivationCodeManager implements ActivationCodeService {
 		String actCode = UUID.randomUUID().toString();
 		ActivationCode Code = new ActivationCode();
 		LocalDate a = (LocalDate.now());
-		Code.setUserId(user);
-		Code.setCreatedDate(Date.valueOf(a));
+		Code.setUser(user);
+		
 		Code.setActivationCode(UUID.randomUUID().toString());
 		return actCode;
 	}

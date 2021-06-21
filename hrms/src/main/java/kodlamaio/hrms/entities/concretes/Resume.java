@@ -1,5 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -50,10 +52,10 @@ public class Resume {
 	private String description;
 	
 	@Column(name = "created_date")
-	private Date createdDate;
+	private LocalDateTime createdDate;
 	
 	@Column(name = "updated_date")
-	private Date updatedDate;
+	private LocalDateTime updatedDate;
 	
 	@Column(name = "is_active")
 	private boolean isActive=true;

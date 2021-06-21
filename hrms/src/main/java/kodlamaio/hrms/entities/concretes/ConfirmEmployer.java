@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -34,8 +35,9 @@ public class ConfirmEmployer {
 	@JoinColumn(name = "employer_id", referencedColumnName = "user_id")
 	private Employer employerId;
 
-	@Column(name = "employee_id")
-	private int employeeId;
+	@ManyToOne(targetEntity = Employer.class)
+	@JoinColumn(name = "system_personnel_id", referencedColumnName = "user_id")
+	private SystemPersonnel systemPersonnel;
 
 	@Column(name = "is_confirmed")
 	private Boolean isConfirmed;

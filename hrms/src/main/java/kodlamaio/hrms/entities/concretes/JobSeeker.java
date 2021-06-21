@@ -4,6 +4,7 @@ package kodlamaio.hrms.entities.concretes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -22,7 +23,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 @EqualsAndHashCode(callSuper = false)
+@PrimaryKeyJoinColumn(name = "id")
 public class JobSeeker extends User {
+	
 	
 	@NotBlank(message = "İsim boş gelimez")
 	@Size(min = 3, message = "İsim alanında en az 3 karakter kullanmanız gerekmektedir!")
