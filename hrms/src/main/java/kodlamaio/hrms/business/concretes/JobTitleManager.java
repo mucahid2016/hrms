@@ -9,7 +9,9 @@ import kodlamaio.hrms.business.abstracts.JobTitleService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
+import kodlamaio.hrms.core.utilities.results.SuccessResult;
 import kodlamaio.hrms.dataAccess.abstracts.JobTitleDao;
+import kodlamaio.hrms.entities.concretes.JobAdvertisement;
 import kodlamaio.hrms.entities.concretes.JobTitle;
 import kodlamaio.hrms.entities.concretes.User;
 
@@ -28,6 +30,13 @@ public class JobTitleManager implements JobTitleService {
 	@Override
 	public List<JobTitle> getAll(){
 		return jobTitleDao.findAll();
+	}
+
+
+	@Override
+	public Result add(JobTitle jobTitle) {
+		this.jobTitleDao.save(jobTitle);
+		return new SuccessResult("İş Başlığı eklendi");
 	}
 	
 
