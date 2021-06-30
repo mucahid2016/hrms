@@ -1,7 +1,10 @@
 package kodlamaio.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -37,5 +40,9 @@ public class Employer extends User {
 	@JsonIgnore
 	@Column(name = "user_confirm")
 	private boolean userConfirm;
+	
+	@OneToMany(mappedBy = "employer")
+	@JsonIgnore
+	private List<JobAdvertisement> jobAdvertisements;
 
 }

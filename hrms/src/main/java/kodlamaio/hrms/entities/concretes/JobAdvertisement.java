@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -49,15 +50,21 @@ public class JobAdvertisement {
 	@Column(name = "create_date")
 	public Date createDate;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade={ CascadeType.PERSIST, CascadeType.MERGE })
+	@Column(name= "working_time")
+	public String workingTime;
+	
+	@Column(name= "working_type")
+	public String workingType;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="city_id")
 	private City city;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade={ CascadeType.PERSIST, CascadeType.MERGE })
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="jobtitleid")
 	private JobTitle jobTitle;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade={ CascadeType.PERSIST, CascadeType.MERGE })
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="employerid")
 	private Employer employer;
 	
